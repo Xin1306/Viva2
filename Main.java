@@ -38,7 +38,7 @@ public class Main {
             int middle= b/2;
             if(middle%2==0){
                 double num1=mixedArray[middle];
-                double num2=mixedArray[middle+1];
+                double num2=mixedArray[middle-1];
                 return(num1 + num2)/2;
             }
             else {
