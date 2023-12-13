@@ -32,16 +32,9 @@ public class Main {
         double []mixedArray=new double[b];
         System.arraycopy(array1,0,mixedArray,0,array1.length);
         System.arraycopy(array2,0,mixedArray,array1.length,array2.length);
-
-        for(int pass =1; pass<b; pass++) {
-            for (int i = 0; i < b - 1; i++) {
-                if (mixedArray[i] > mixedArray[i + 1]) {
-                    double hold = mixedArray[i];
-                    mixedArray[i] = mixedArray[i + 1];
-                    mixedArray[i + 1] = hold;
-                }
-            }
-        }
+        
+        Arrays.sort(mixedArray);
+          
             int middle= b/2;
             if(middle%2==0){
                 double num1=mixedArray[middle];
