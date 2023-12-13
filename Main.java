@@ -2,37 +2,27 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the size of array1: ");
-        int sizeArray1= sc.nextInt();
-        System.out.println("Enter the size of array2: ");
-        int sizeArray2= sc.nextInt();
-        System.out.print("Array1 :");
-        double[] array1 = new double[sizeArray1];
-        for(int i=0; i<sizeArray1;i++) {
-            array1[i] = sc.nextDouble();
-        }
+       
+        System.out.print("Array1 = ");
+        String str1 = sc.nextLine();
+        System.out.print("\nArray2= ");
+        String str2 = sc.nextLine();
 
-        System.out.println("\nArray2 : ");
-        double[] array2 = new double[sizeArray2];
-        for(int i=0; i<sizeArray2;i++) {
-            array2[i] = sc.nextDouble();
+        String s1= str1.substring(1,str1.length()-1);
+        String s2= str2.substring(1,str2.length()-1);
+
+        String [] sizeArray1=s1.split(",");
+        String [] sizeArray2=s2.split(",");
+
+        double [] array1= new double[sizeArray1.length];
+        double [] array2= new double[sizeArray2.length];
+
+        for(int i=0;i<sizeArray1.length; i++){
+            array1[i]=Double.parseDouble(sizeArray1[i]);
         }
-        System.out.print("Array1 ={");
-        for(int k=0; k<sizeArray1;k++) {
-            System.out.print(array1[k]);
-            if (k < sizeArray1 - 1) {
-                System.out.print(",");
-            }
+        for(int i=0;i<sizeArray2.length; i++){
+            array2[i]=Double.parseDouble(sizeArray2[i]);
         }
-        System.out.print("}");
-        System.out.print("\nArray2 ={");
-        for(int k=0; k<sizeArray2;k++) {
-            System.out.print(array2[k]);
-            if (k < sizeArray2 - 1) {
-                System.out.print(",");
-            }
-        }
-        System.out.print("}");
 
         double median= calMedian(array1,array2);
         System.out.printf("\nMedian: %.3f",median);
