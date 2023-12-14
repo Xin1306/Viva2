@@ -36,7 +36,7 @@ public class Main {
         Arrays.sort(mixedArray);
           
             int middle= b/2;
-            if(middle%2==0){
+            if(b%2==0){
                 double num1=mixedArray[middle];
                 double num2=mixedArray[middle-1];
                 return(num1 + num2)/2;
